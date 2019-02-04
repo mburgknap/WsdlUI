@@ -134,6 +134,7 @@ namespace Drexyia.WebSvc.Process {
 
             }
 
+            client.MaximumResolvedReferences = Int32.MaxValue;
             client.ResolveMetadataReferences = true;
             client.OperationTimeout = new TimeSpan(0, 0, _timeoutInSeconds);
 

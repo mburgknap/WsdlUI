@@ -8,6 +8,7 @@
 
 using System;
 using System.Windows.Forms;
+using System.Linq;
 
 using process = Drexyia.WebSvc.Process;
 
@@ -54,7 +55,7 @@ namespace WsdlUI.App.UI.UserControls {
                 wsNode.Tag = WSNodeType.WebServiceNode;
                 wsNode.ContextMenuStrip = cms_AddRemoveStartup;
 
-                foreach (var webMethod in item.WebSvcResult.WebSvcMethods) {
+                foreach (var webMethod in item.WebSvcResult.WebSvcMethods.OrderBy(x => x.Name)) {
                     TreeNode wmNode = new TreeNode(webMethod.Name);
                     wmNode.ImageKey = "bullet_purple.png";
                     wmNode.SelectedImageKey = "bullet_green.png";
